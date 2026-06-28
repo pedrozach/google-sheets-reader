@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 from oauth2client.service_account import ServiceAccountCredentials
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import auth
 from logic import CATEGORIES, TARGETS, compute_pivot, get_monthly_totals, get_rolling_average
 
 load_dotenv()
@@ -26,6 +27,8 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
+auth.show_sidebar_login()
 
 st.title("Spending Summary")
 

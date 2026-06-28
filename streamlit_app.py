@@ -6,6 +6,7 @@ import streamlit as st
 from dotenv import load_dotenv
 from openai import OpenAI
 
+import auth
 import logic
 
 load_dotenv()
@@ -78,6 +79,9 @@ st.markdown(
 )
 
 st.title("Add Expense")
+
+if not auth.is_authenticated():
+    auth.show_inline_login()
 
 tab_upload, tab_manual = st.tabs(["Upload Invoice", "Manual Entry"])
 
