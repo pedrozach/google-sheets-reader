@@ -53,3 +53,7 @@ Thumbs.db
 .coverage
 htmlcov/
 
+# Service Account
+service-account.json
+
+.agents/
